@@ -90,7 +90,6 @@ Les entités principales sont modélisées en classes Java, respectant les princ
 | ☁️ Chargement automatique des données depuis SQLite    | ☐ à faire           |
 | 🔁 Rafraîchissement dynamique des interfaces            | ☐ à faire           |
 
-Tu peux cocher (`☑️`) chaque ligne une fois que la fonctionnalité est complétée.
 
 ---
 
@@ -136,7 +135,7 @@ Des classes de test sont disponibles dans le dossier `/test/` pour vérifier ind
 
 1. Cloner le dépôt :
    ```bash
-   git clone https://github.com/nom-utilisateur/eduSystem.git
+   git clone https://github.com/grand840/eduSystem.git
     ````
 
 2. Ouvrir le projet avec **NetBeans** ou tout autre IDE compatible avec Java Swing.
