@@ -1,0 +1,47 @@
+-- Table Professeur
+CREATE TABLE professeur (
+    id INTEGER PRIMARY KEY,
+    nom TEXT NOT NULL
+);
+
+-- Table Local
+CREATE TABLE local (
+    id INTEGER PRIMARY KEY,
+    batiment TEXT NOT NULL,
+    etage INTEGER,
+    numero INTEGER
+);
+
+-- Table Série
+CREATE TABLE serie (
+    id INTEGER PRIMARY KEY
+);
+
+-- Table Élève
+CREATE TABLE eleve (
+    id INTEGER PRIMARY KEY,
+    nom TEXT NOT NULL,
+    coordonnees TEXT,
+    id_serie INTEGER,
+    FOREIGN KEY(id_serie) REFERENCES serie(id)
+);
+
+-- Table Cours
+CREATE TABLE cours (
+    id INTEGER PRIMARY KEY,
+    nom TEXT NOT NULL,
+    id_prof INTEGER,
+    id_local INTEGER,
+    FOREIGN KEY(id_prof) REFERENCES professeur(id),
+    FOREIGN KEY(id_local) REFERENCES local(id)
+);
+
+-- Table de liaison Cours ↔ Série (relation N:N)
+CREATE TABLE cours_serie (
+    id_cours INTEGER,
+    id_serie INTEGER,
+    PRIMARY KEY(id_cours, id_serie),
+    FOREIGN KEY(id_cours) REFERENCES cours(id),
+    FOREIGN KEY(id_serie) REFERENCES serie(id)
+);
+
